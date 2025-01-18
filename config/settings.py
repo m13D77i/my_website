@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # my local apps
     "pages.apps.PagesConfig",
+    "accounts.apps.AccountsConfig",
 
 ]
 
