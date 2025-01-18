@@ -1,4 +1,5 @@
 {% extends "_base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block page_title %}contact me{% endblock page_title %}
 
@@ -24,7 +25,7 @@
     <!-- /page title -->
 
     <!-- contact -->
-    <section class="section section-on-footer" data-background="{% static 'images/backgrounds/bg-dots.png' %}">
+    <section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -35,18 +36,7 @@
                         <h4 class="mb-80">Contact Form</h4>
                         <form action="#" class="row">
                             {% csrf_token %}
-                            <div class="col-md-6">
-                                <input type="text" id="name" name="name" placeholder="Full Name"
-                                       class="form-control px-0 mb-4">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" id="email" name="email" placeholder="Email Address"
-                                       class="form-control px-0 mb-4">
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" id="message" class="form-control px-0 mb-4"
-                                          placeholder="Type Message Here"></textarea>
-                            </div>
+                            {{ form|crispy }}
                             <div class="col-lg-6 col-10 mx-auto">
                                 <button class="btn btn-primary w-100">send</button>
                             </div>
